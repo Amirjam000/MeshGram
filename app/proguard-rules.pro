@@ -50,3 +50,11 @@
 # Keep ZXing Core
 -keep class com.google.zxing.** { *; }
 -dontwarn com.google.zxing.**
+
+# General warnings suppression and attributes preservation
+-dontwarn okio.**
+-dontwarn java.lang.invoke.**
+-dontwarn javax.annotation.**
+-keepattributes *Annotation*,Signature,InnerClasses,EnclosingMethod
+-ignorewarnings
+
