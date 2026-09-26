@@ -90,13 +90,7 @@ fun ChatScreen(
                     selectedTabIndex = selectedFolder.ordinal,
                     edgePadding = 12.dp,
                     containerColor = MaterialTheme.colorScheme.surface,
-                    contentColor = MaterialTheme.colorScheme.primary,
-                    indicator = { tabPositions ->
-                        TabRowDefaults.SecondaryIndicator(
-                            modifier = Modifier.tabIndicatorOffset(tabPositions[selectedFolder.ordinal]),
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                    }
+                    contentColor = MaterialTheme.colorScheme.primary
                 ) {
                     ChatFolder.values().forEach { folder ->
                         Tab(

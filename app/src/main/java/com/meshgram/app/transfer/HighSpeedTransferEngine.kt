@@ -113,7 +113,7 @@ class HighSpeedTransferEngine(private val context: Context) {
                     )
 
                     bos.use { out ->
-                        var read: Int
+                        var read = 0
                         while (totalRead < fileSize && dis.read(buffer, 0, minOf(buffer.size.toLong(), fileSize - totalRead).toInt()).also { read = it } != -1) {
                             out.write(buffer, 0, read)
                             totalRead += read
@@ -183,7 +183,7 @@ class HighSpeedTransferEngine(private val context: Context) {
                 )
 
                 bis.use { input ->
-                    var bytesRead: Int
+                    var bytesRead = 0
                     while (input.read(buffer).also { bytesRead = it } != -1) {
                         dos.write(buffer, 0, bytesRead)
                         totalSent += bytesRead
